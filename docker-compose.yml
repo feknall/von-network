@@ -40,8 +40,9 @@ services:
       - WEB_ANALYTICS_SCRIPT=${WEB_ANALYTICS_SCRIPT}
       - INFO_SITE_TEXT=${INFO_SITE_TEXT}
       - INFO_SITE_URL=${INFO_SITE_URL}
-    networks:
-      - von
+    network_mode: bridge
+#    networks:
+#      - von
     ports:
       - ${WEB_SERVER_HOST_PORT:-9000}:8000
     volumes:
@@ -78,8 +79,9 @@ services:
   nodes:
     image: von-network-base
     command: ./scripts/start_nodes.sh
-    networks:
-      - von
+    network_mode: bridge
+#    networks:
+#      - von
     ports:
       - 9701:9701
       - 9702:9702
@@ -101,8 +103,9 @@ services:
   node1:
     image: von-network-base
     command: ./scripts/start_node.sh 1
-    networks:
-      - von
+    network_mode: bridge
+#    networks:
+#      - von
     ports:
       - 9701:9701
       - 9702:9702
@@ -118,8 +121,9 @@ services:
   node2:
     image: von-network-base
     command: ./scripts/start_node.sh 2
-    networks:
-      - von
+    network_mode: bridge
+#    networks:
+#      - von
     ports:
       - 9703:9703
       - 9704:9704
@@ -135,8 +139,9 @@ services:
   node3:
     image: von-network-base
     command: ./scripts/start_node.sh 3
-    networks:
-      - von
+    network_mode: bridge
+#    networks:
+#      - von
     ports:
       - 9705:9705
       - 9706:9706
@@ -152,8 +157,9 @@ services:
   node4:
     image: von-network-base
     command: ./scripts/start_node.sh 4
-    networks:
-      - von
+    network_mode: bridge
+#    networks:
+#      - von
     ports:
       - 9707:9707
       - 9708:9708
